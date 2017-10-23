@@ -7,6 +7,4 @@ class XmlReader:
 
     def readfile(self):
         file = minidom.parse("../data/SemEval2016-Task3-CQA-QL-dev-subtaskA.xml")
-        threadlist = file.getElementsByTagName('Thread')
-        print(len(threadlist))
-        return len(threadlist)
+        return file
