@@ -2,7 +2,7 @@ from xml.dom import minidom
 
 
 class XmlReader:
-    def __init__(self):
+    def __init__(self, ):
         self._input = ""
 
     def readfile(self):
