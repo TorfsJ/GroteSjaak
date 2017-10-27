@@ -1,10 +1,12 @@
-from lxml import objectify
+from bs4 import BeautifulSoup
 
 from dom.thread import Thread
 
 
 class XmlFormatter:
-    def converttothreads(self, xmlobject):
-        obj = objectify.fromstring(xmlobject)
-        print(obj.object1[0])
+    sequence = 0
+    def create_document(self, file):
+        document = file
+
+    def convert_to_threads(self):
         thread = Thread()

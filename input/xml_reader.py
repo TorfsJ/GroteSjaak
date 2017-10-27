@@ -1,10 +1,9 @@
-from xml.dom import minidom
-
+from bs4 import BeautifulSoup
 
 class XmlReader:
-    def __init__(self):
-        self._input = ""
+    def __init__(self, fileUri):
+        self._fileUri = fileUri
 
     def readfile(self):
-        file = minidom.parse("../data/SemEval2016-Task3-CQA-QL-dev-subtaskA.xml")
+        file = open("../data/SemEval2016-Task3-CQA-QL-dev-subtaskA.xml")
         return file
