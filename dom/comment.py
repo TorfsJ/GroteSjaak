@@ -1,11 +1,5 @@
-from dom.relevance import Relevance
-
-
 class Comment:
-    def __init__(self, relevance, comment_id, date, text):
-        if relevance not in (Relevance.GOOD, Relevance.BAD):
-            raise ValueError('Relevance is not valid!')
-        self.relevance = relevance
+    def __init__(self, relevance, text, comment_id):
         self.comment_id = comment_id
-        self.date = date
+        self.relevance = relevance
         self.text = text
