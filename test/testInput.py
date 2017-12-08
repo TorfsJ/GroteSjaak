@@ -7,4 +7,5 @@ class TestReader(unittest.TestCase):
     def test_reader(self):
         fileuris = ["kakhoofd", "u mama"]
         reader = XmlFormatter("sgdsdg")
-        reader.convert_data()
+        forum = reader.convert_data
+        print(forum)
