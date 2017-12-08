@@ -19,5 +19,5 @@ class XmlFormatter:
         # file = open("../data/SemEval2016-Task3-CQA-QL-train-part1-subtaskA.xml")
         # xml = file.read(file)
         with open("../data/SemEval2016-Task3-CQA-QL-train-part1-subtaskA.xml") as f:
-            xml =  f.read()
+            xml = f.read()
             return f
