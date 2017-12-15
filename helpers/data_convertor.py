@@ -8,13 +8,9 @@ from dom.comment import Comment
 from bs4 import BeautifulSoup
 
 
-class XmlFormatter:
-    def __init__(self, file_uri):
-        self.file_uri = file_uri
-        self.forum = Forum()
-
-    @property
-    def convert_data(self):
+class Xml_convertor:
+    @staticmethod
+    def convert_data(file_uri):
         forum = Forum()
         with open('../data/SemEval2016-Task3-CQA-QL-train-part2-subtaskA.xml', encoding="utf8") as file:
             try:
