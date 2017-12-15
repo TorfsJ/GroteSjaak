@@ -13,4 +13,4 @@ class CollectionModel:
         self.tfidx = FrequencyHelper.calculate_frequencies(temp)
 
     def prob_term(self, term):
-        return map(lambda x: self.tfidx.get(x), term)
+        return self.tfidx.get(term)
