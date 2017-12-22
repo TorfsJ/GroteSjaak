@@ -11,10 +11,10 @@ class CollectionModel:
                 self.corpus += comment.text + " "
         temp = PreProcessor.processText(self.corpus)
         self.tfidx = FrequencyHelper.calculate_frequencies(temp)
-        tempCorpus = ""
+        temp_corpus = ""
         for word in temp:
-            tempCorpus += word + " "
-        self.corpus = tempCorpus
+            temp_corpus += word + " "
+        self.corpus = temp_corpus
 
     def prob_term(self, term):
         return self.tfidx.get(term)
