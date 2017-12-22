@@ -11,3 +11,5 @@ class Forum:
 
     def make_models(self):
         self.collection_model = CollectionModel(self)
+        for thread in self.threads:
+            thread.make_models()
