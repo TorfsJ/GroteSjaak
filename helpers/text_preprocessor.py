@@ -2,6 +2,7 @@ import nltk
 from nltk.corpus import stopwords
 import string
 
+
 class PreProcessor:
     @staticmethod
     def processText(text):
