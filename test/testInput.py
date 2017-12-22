@@ -11,3 +11,10 @@ class TestReader(unittest.TestCase):
         forum.make_models()
         print(forum.collection_model.corpus)
         assert_that(len(forum.threads), equal_to(379))
+        threadzero = forum.threads[0]
+        querytermen = threadzero.question.query_model.query_terms
+        doubles = []
+        for comment in threadzero.comments:
+            double = comment.document_model.prob_document_given_query(querytermen)
+            doubles.append(double)
+        print(doubles)
