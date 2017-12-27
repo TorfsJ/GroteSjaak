@@ -10,6 +10,7 @@ class Comment:
         else:
             self.relevance = "bad"
         self.text = text
+        self.rankvalue = -1
 
     def make_model(self):
         self.document_model = DocumentModel(self.text)

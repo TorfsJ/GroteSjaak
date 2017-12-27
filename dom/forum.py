@@ -13,3 +13,7 @@ class Forum:
         self.collection_model = CollectionModel(self)
         for thread in self.threads:
             thread.make_models()
+
+    def calculate_rankings(self):
+        for thread in self.threads:
+            thread
