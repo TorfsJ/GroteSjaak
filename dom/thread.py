@@ -24,7 +24,11 @@ class Thread:
                 # 0.5 * P(D) + 0.5 * P(C) (per query term, per comment)
                 pd = comment.document_model.prob_document_given_query(term)
                 pc = collection_model.prob_term(term)
-                pqt = weight_lambda*pd + weight_lambda*pc
-                pq = pq * pqt
+                pqt = weight_lambda * pd + weight_lambda * pc
+                if pqt == 0:
+                    print('Got 0 at comment %s at term %s with values of pd: %s and pc: %s' %
+                          (comment.comment_id, term, pd, pc))
+                else:
+                    pq = pq * pqt
             comment.rankvalue = pq
 

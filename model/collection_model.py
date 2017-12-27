@@ -17,4 +17,4 @@ class CollectionModel:
         self.corpus = temp_corpus
 
     def prob_term(self, term):
-        return self.tfidx.get(term)
+        return self.tfidx.get(term, 0)

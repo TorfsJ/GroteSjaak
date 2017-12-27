@@ -1,18 +1,14 @@
 from helpers.data_convertor import Xml_convertor
-
+from helpers.data_writer import DataWriter
 
 class Main:
     def main():
-        forum = Xml_convertor.convert_data("dfss")
+        file_uri = "SemEval2016-Task3-CQA-QL-train-part2-subtaskA.xml"
+        forum = Xml_convertor.convert_data(file_uri)
         forum.make_models()
         for thread in forum.threads:
-            querytermen = thread.question.query_model.query_terms
-            for comment in thread.comments:
-                comment.document_model.prob_document_given_query(querytermen)
-        threadzero = forum.threads[0]
-        for comment in threadzero.comments:
-            print("%s %s %s %s \n" % (threadzero.question.question_id, comment.comment_id,
-                  comment.document_model.rank_value, comment.relevance))
+            thread.calculate_ranking(forum.collection_model)
+        DataWriter.write_forum_to_file(forum, file_uri)
 
     if __name__ == '__main__':
         main()

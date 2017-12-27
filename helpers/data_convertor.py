@@ -12,7 +12,7 @@ class Xml_convertor:
     @staticmethod
     def convert_data(file_uri):
         forum = Forum()
-        with open('../data/SemEval2016-Task3-CQA-QL-train-part2-subtaskA.xml', encoding="utf8") as file:
+        with open('./data/SemEval2016-Task3-CQA-QL-train-part2-subtaskA.xml', encoding="utf8") as file:
             try:
                 xml = file.read()
             finally:
